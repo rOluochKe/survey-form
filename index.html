@@ -9,6 +9,23 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <style>
+    .rowN { padding: 3px; }
+    .leftTab {
+      display: inline-block;
+      text-align: right;
+      width: 40%;
+      padding: 2px;
+      vertical-align: top;
+    }
+
+    .rightTab {
+      display: inline-block;
+      text-align: left;
+      width: 48%;
+      vertical-align: middle;
+    }
+    </style>
 </head>
 
 <body style="background: #a9d7d1">
@@ -19,25 +36,25 @@
         <p id="description" class="text-center mt-3">Let us know how we can improve freeCodeCamp</p>
         <form id="survey-form" class="text-center" data-toggle="validator" role="form">
           <div class="rowN" >
-            <label id="name-label">* Name</label>
-            <input id="name" placeholder="Enter your name" required />
+            <div class="leftTab"><label id="name-label">* Name</label></div>
+            <div class="rightTab"><input id="name" placeholder="Enter your name" required /></div>
           </div>
           <div class="rowN">
             <div class="form-group">
-            <label id="email-label">* Email</label>
-            <input id="email" type="email" placeholder="Enter your email" name="email" required
+            <div class="leftTab"><label id="email-label">* Email</label></div>
+            <div class="rightTab"><input id="email" type="email" placeholder="Enter your email" name="email" required
              data-error="Bruh, that email address is invalid"
-             />
+             /></div>
              <div class="help-block with-errors"></div>
             </div>
           </div>
             <div class="rowN">
-              <label id="number-label">* Age </label>
-              <input type="number" name="age" id="number" placeholder="age">
-            </div>
+              <div class="leftTab"><label id="number-label">* Age </label></div>
+              <div class="rightTab"><input type="number" name="age" id="number" placeholder="age">
+            </div></div>
             <div class="rowN">
-              <label id="dropdownLabel">Which option best describes your current role?</label>
-              <select id="dropdown" >
+              <div class="leftTab"><label id="dropdownLabel">Which option best describes your current role?</label></div>
+              <div class="rightTab"><select id="dropdown" >
                 <option disabled value>
                   Selcet an option
                 </option>
@@ -56,13 +73,12 @@
                 <option>
                   Other
                 </option>
-              </select>
+              </select></div>
             </div>
             <div id="rowN">
               <label id=radioLabel>
                 * How likely is that you would recommend freeCodeCamp to a friend?
               </label>
-              
             </div>
             <div class="form-group">
               <button type="submit" class="btn btn-primary">Submit</button>
