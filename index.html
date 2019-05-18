@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <style>
+    .flushRight {float: right;}
+    .flushLeft {float: left;}
     .rowN { padding: 3px; }
     .leftTab {
       display: inline-block;
@@ -27,6 +29,11 @@
     }
     </style>
 </head>
+<style type="text/css">
+  .radio li {
+   list-style: none;
+  }
+</style>
 
 <body style="background: #a9d7d1">
   <div class="row">
@@ -34,15 +41,15 @@
       <h2 id="title" class="text-center">Survey Form</h2>
       <div class="card">
         <p id="description" class="text-center mt-3">Let us know how we can improve freeCodeCamp</p>
-        <form id="survey-form" class="text-center" data-toggle="validator" role="form">
+        <form id="survey-form" class="text-center mb-3" data-toggle="validator" role="form">
           <div class="rowN" >
             <div class="leftTab"><label id="name-label">* Name</label></div>
-            <div class="rightTab"><input id="name" placeholder="Enter your name" required /></div>
-          </div>
+            <div class="rightTab"><input id="name" size="35" placeholder="Enter your name" required />
+          </div></div>
           <div class="rowN">
             <div class="form-group">
             <div class="leftTab"><label id="email-label">* Email</label></div>
-            <div class="rightTab"><input id="email" type="email" placeholder="Enter your email" name="email" required
+            <div class="rightTab"><input id="email" size="35" type="email" placeholder="Enter your email" name="email" required
              data-error="Bruh, that email address is invalid"
              /></div>
              <div class="help-block with-errors"></div>
@@ -50,35 +57,63 @@
           </div>
             <div class="rowN">
               <div class="leftTab"><label id="number-label">* Age </label></div>
-              <div class="rightTab"><input type="number" name="age" id="number" placeholder="age">
+              <div class="rightTab"><input type="number" size="35" name="age" id="number" placeholder="age">
             </div></div>
             <div class="rowN">
               <div class="leftTab"><label id="dropdownLabel">Which option best describes your current role?</label></div>
               <div class="rightTab"><select id="dropdown" >
-                <option disabled value>
-                  Selcet an option
-                </option>
-                <option>
-                  Student
-                </option>
-                <option>
-                  Full Time Job
-                </option>
-                <option>
-                  Full Time Learner
-                </option>
-                <option>
-                  Prefer Not To Say
-                </option>
-                <option>
-                  Other
-                </option>
-              </select></div>
+                <option disabled value> Selcet an option </option>
+                <option> Student </option>
+                <option> Full Time Job </option>
+                <option> Full Time Learner </option>
+                <option> Prefer Not To Say </option>
+                <option> Other </option>
+              </select>
+            </div>
             </div>
             <div id="rowN">
-              <label id=radioLabel>
-                * How likely is that you would recommend freeCodeCamp to a friend?
-              </label>
+              <fieldset>
+                <div class="leftTab"><label id=radioLabel>* How likely is that you would recommend freeCodeCamp to a friend? </label></div>
+                <div class="rightTab"><ul style="margin-left:-37px;" class="radio">
+                  <li><input type="radio" name="definitely" id="definitely" /><label> Definitely</label></li>
+                  <li><input type="radio" name="maybe" id="maybe" /><label> Maybe</label></li>
+                  <li><input type="radio" name="not-sure" id="not-sure" /><label> Not sure</label></li>
+                </ul></div>
+              </fieldset>
+            </div>
+            <div class="rowN">
+              <div class="leftTab"><label id="dropdownLabel">What do you like most in FCC:</label></div>
+              <div class="rightTab"><select id="dropdown" >
+                <option disabled value> Selcet an option </option>
+                <option> Challenges </option>
+                <option> Projects </option>
+                <option> Community </option>
+                <option> Open Source </option>
+              </select>
+            </div>
+            </div>
+            <div id="rowN">
+              <fieldset>
+                <div class="leftTab"><label id=radioLabel>* Things that should be improved in the future (Check all that apply): </label></div>
+                <div class="rightTab">
+                <ul class="radio" style="margin-left:-37px;">
+                  <li><input type="checkbox" name="Front-end-projects" id="Front-end-projects" /><label> Front-end Projects</label></li>
+                  <li><input type="checkbox" name="backend-projects" id="backend-projects" /><label> Back-end Projects</label></li>
+                  <li><input type="checkbox" name="data-visualization" id="data-visualization" /><label> Data Visualization</label></li>
+                  <li><input type="checkbox" name="challenges" id="challenges" /><label> Challenges</label></li>
+                  <li><input type="checkbox" name="open-source-community" id="open-source-community" /><label> Open Source Community</label></li>
+                  <li><input type="checkbox" name="gitter-help-rooms" id="gitter-help-rooms" /><label> Gitter help rooms</label></li>
+                  <li><input type="checkbox" name="videos" id="videos" /><label> Videos</label></li>
+                  <li><input type="checkbox" name="city-meetups" id="city-meetups" /><label> City Meetups</label></li>
+                  <li><input type="checkbox" name="city-meetups" id="city-meetups" /><label> Wiki</label></li>
+                  <li><input type="checkbox" name="forum" id="forum" /><label> Forum</label></li>
+                  <li><input type="checkbox" name="additional-courses" id="additional-courses" /><label> Additional Courses</label></li>
+                </ul></div>
+              </fieldset>
+            </div>
+            <div class="rowN">
+              <div class="leftTab"><label>Any Comments or Suggestions?</label></div>
+              <div class="rightTab"><textarea typ="text" name="comment" id="comment" placeholder="Enter your comment here..."></textarea></div>
             </div>
             <div class="form-group">
               <button type="submit" class="btn btn-primary">Submit</button>
@@ -99,6 +134,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
+
 </body>
 
 </html>
